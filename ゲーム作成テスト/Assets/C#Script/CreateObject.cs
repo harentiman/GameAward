@@ -12,8 +12,8 @@ public class CreateObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject CreateCube = Instantiate((GameObject)Resources.Load("Cube"),Position, Quaternion.identity);
-        CreateCube.transform.localScale =Scale;
+        
+
     }
     // Update is called once per frame
     void Update()
@@ -23,6 +23,9 @@ public class CreateObject : MonoBehaviour
 
     private void OnTriggerStay(Collider collider)
     {
-        
+
+        GameObject CreateCube = Instantiate((GameObject)Resources.Load("Cube"), Position, Quaternion.identity);
+        CreateCube.transform.localScale = Scale;
+
     }
 }

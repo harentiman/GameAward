@@ -6,12 +6,13 @@ public class CameraController : MonoBehaviour
 {
 
     GameObject Camera;
+    public string Tag;
 
     // Start is called before the first frame update
     void Start()
     {
         // Playerの部分はカメラが追いかけたいオブジェクトの名前をいれる
-        this.Camera = GameObject.Find("Player");
+        this.Camera = GameObject.Find(Tag);
     }
 
     // Update is called once per frame

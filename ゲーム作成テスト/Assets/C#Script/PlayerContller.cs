@@ -13,6 +13,7 @@ public class PlayerContller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         canClimb = false;
         playerspeed = 7.0f;
         isJumping = false;

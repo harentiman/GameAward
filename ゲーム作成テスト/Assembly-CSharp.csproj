@@ -59,10 +59,14 @@
      <Compile Include="Assets\C#Script\ClimbDownCheck.cs" />
      <Compile Include="Assets\C#Script\ClimbUpCheck.cs" />
      <Compile Include="Assets\C#Script\CreateObject.cs" />
+     <Compile Include="Assets\C#Script\fadeManager.cs" />
      <Compile Include="Assets\C#Script\goal.cs" />
      <Compile Include="Assets\C#Script\ObstacleController.cs" />
      <Compile Include="Assets\C#Script\PlayerContller.cs" />
      <Compile Include="Assets\C#Script\timer.cs" />
+     <Compile Include="Assets\C#Script\Title.cs" />
+     <Compile Include="Assets\naichilab\FadeManager\Sample\FadeSample.cs" />
+     <Compile Include="Assets\naichilab\FadeManager\Scripts\FadeManager.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/senko/Downloads/Live2D/Unity/sample/ゲーム作成テスト/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
