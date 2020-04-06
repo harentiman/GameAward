@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Stage
+  - ' Wooden Box'
+  - Heavy Stone
   layers:
   - Default
   - TransparentFX

@@ -5,86 +5,58 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static Rigidbody rig;
-    float playerspeed;
-    float jampsSpeed;
-    private bool isJumping;
-
+   
+    public static float jampSpeed;
+    public static bool isJumping;
+    public static float Horisontal;
+    public static float Vertical;
+    float PlayerSpeed;
+      
 
     // Start is called before the first frame update
     void Start()
     {
-        playerspeed = 7.0f;
         isJumping = false;
-        jampsSpeed = 6.0f;
         rig = GetComponent<Rigidbody>();
-        //rig.useGravity = false;
-        
+        jampSpeed =10000.0f;
+        PlayerSpeed = 15.0f;
+        Vertical = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        Horisontal = Input.GetAxis("Horizontal");
+        Vector2 direction = new Vector3(Horisontal*PlayerSpeed, -15);
+    
 
-        if (isJumping == true)
+        if (isJumping == true && Input.GetKey(KeyCode.X) || Input.GetKeyDown("joystick button 0"))
         {
-
-
-            if (Input.GetKey(KeyCode.X))
-            {
-                rig.velocity += new Vector3(0, jampsSpeed, 0);
-                isJumping = false;
-                
-
-            }
-            //上
-            else if (Input.GetKey(KeyCode.W))
-            {
-
-                rig.velocity = new Vector3(0, 0, playerspeed);
-
-            }
-            //左
-            else if (Input.GetKey(KeyCode.A))
-            {
-
-                rig.velocity = new Vector3(-playerspeed, 0, 0);
-
-            }
-            //下
-            else if (Input.GetKey(KeyCode.S))
-            {
-
-                rig.velocity = new Vector3(0, 0, -playerspeed);
-
-            }
-            //右
-            else if (Input.GetKey(KeyCode.D))
-            {
-
-                rig.velocity = new Vector3(playerspeed, 0, 0);
-            }
-
-            else
-            {
-                rig.velocity += new Vector3(0, 0, 0);
-            }
+            
+            Debug.Log("jamp");
+            isJumping = false;
+            rig.AddForce(new Vector3(0,jampSpeed,0));
+            
         }
-        else
-        {
-            rig.velocity += new Vector3(0, 0, 0);
-
-        }
+     
     }
-
+    void FixedUpdate()
+    {
+        rig.velocity = new Vector2(Horisontal*PlayerSpeed,-15);
+    }
+    //ステージとの当たり判定
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Stage"))
         {
             isJumping = true;
+           
         }
 
     }
 
-    
+
+
+
 }
