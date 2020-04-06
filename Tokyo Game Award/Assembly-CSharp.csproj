@@ -56,11 +56,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\C#Script\GravityControl.cs" />
-     <Compile Include="Assets\C#Script\HeavyStoneControl.cs" />
      <Compile Include="Assets\C#Script\InversAnimation.cs" />
      <Compile Include="Assets\C#Script\PlayerController.cs" />
-     <Compile Include="Assets\C#Script\inputDemo.cs" />
-     <Compile Include="Assets\C#Script\title.cs" />
+     <Compile Include="Assets\C#Script\SceneTransition.cs" />
      <Compile Include="Assets\naichilab\FadeManager\Sample\FadeSample.cs" />
      <Compile Include="Assets\naichilab\FadeManager\Scripts\FadeManager.cs" />
  <Reference Include="Unity.Timeline.Editor">
