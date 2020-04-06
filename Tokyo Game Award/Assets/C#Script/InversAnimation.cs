@@ -10,7 +10,7 @@ public class InversAnimation : MonoBehaviour
     private bool isReInvers;
     private bool isIdle;
     private float freezetime;
-    int count;
+    private float speed = 500f;
 
 
     // Start is called before the first frame update
@@ -21,34 +21,38 @@ public class InversAnimation : MonoBehaviour
         isInvers = true;
         isReInvers = true;
         freezetime = 1.0f;
+
     }
     // Update is called once per frame
     void Update()
     {
 
-
-        
-        if(PlayerController.isJumping==true)
+        if (PlayerController.isJumping == true)
         {
             //回転
-            if (Input.GetKeyDown(KeyCode.Space)||
-                Input.GetKeyDown("joystick button 4") || Input.GetKeyDown("joystick button 3") && isInvers == true)
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 1") && isInvers == true)
             {
-                PlayerController.rig.constraints = RigidbodyConstraints.FreezeAll;  //全固定
+                
+                PlayerController.rb.constraints = RigidbodyConstraints.FreezeAll;  //全固定
+                float step = speed * Time.deltaTime;
+
+                
                 animator.SetTrigger("isInvers");                                    //アニメーション
                 Invoke("Freeze", freezetime);                                       //遅延処理
+                PlayerController.rb.transform.rotation = Quaternion.Euler(0, 0, 180f);
                 isInvers = false;
-
+                Debug.Log("Invers");
 
             }
             //再回転
-            else if (Input.GetKeyDown(KeyCode.Space) ||
-                Input.GetKeyDown("joystick button 4") || Input.GetKeyDown("joystick button 3") && isReInvers == true)
+            else if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 1") && isReInvers == true)
             {
-                PlayerController.rig.constraints = RigidbodyConstraints.FreezeAll;
+                PlayerController.rb.constraints = RigidbodyConstraints.FreezeAll;
                 animator.SetTrigger("isReInvers");
                 Invoke("Freeze", freezetime);
+                PlayerController.rb.transform.rotation = Quaternion.Euler(0, 0, 180f);
                 isReInvers = false;
+                Debug.Log("Invers");
 
 
             }
@@ -57,25 +61,23 @@ public class InversAnimation : MonoBehaviour
             {
 
 
-                PlayerController.rig.constraints = RigidbodyConstraints.FreezeAll;
+                PlayerController.rb.constraints = RigidbodyConstraints.FreezeAll;
                 animator.SetTrigger("isIdle");
                 Invoke("Freeze", freezetime);
                 isInvers = true;
                 isReInvers = true;
 
+
             }
         }
-        
-
     }
 
     //フリーズ処理
     private void Freeze()
     {
-        //PlayerController.rig.constraints = RigidbodyConstraints.None;           //固定解除
-        PlayerController.rig.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
+        PlayerController.rb.constraints = RigidbodyConstraints.None;           //固定解除
+        PlayerController.rb.constraints = RigidbodyConstraints.FreezeRotation;
+       
+
     }
-
-   
-
 }
