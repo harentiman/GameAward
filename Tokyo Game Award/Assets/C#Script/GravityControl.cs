@@ -12,7 +12,7 @@ public class GravityControl : MonoBehaviour
     {
 
         rig = GetComponent<Rigidbody>();
-        Gravity = new Vector3(0, -250, 0);
+        Gravity = new Vector3(0, -600, 0);
     }
 
     void FixedUpdate()
