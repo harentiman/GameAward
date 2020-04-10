@@ -30,7 +30,7 @@ public class InversAnimation : MonoBehaviour
         if (PlayerController.isJumping == true)
         {
             //回転
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 1") && isInvers == true)
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 3") && isInvers == true)
             {
 
                 PlayerController.rb.constraints = RigidbodyConstraints.FreezeAll;  //全固定
@@ -45,7 +45,7 @@ public class InversAnimation : MonoBehaviour
 
             }
             //再回転
-            else if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 1") && isReInvers == true)
+            else if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 3") && isReInvers == true)
             {
                 PlayerController.rb.constraints = RigidbodyConstraints.FreezeAll;
                 animator.SetTrigger("isReInvers");

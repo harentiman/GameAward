@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         playerspeed = 10.0f;
         isJumping = false;
-        jampsSpeed = 3000.0f;
+        jampsSpeed = 5700.0f;
         rb = GetComponent<Rigidbody>();
 
         //rig.useGravity = false;
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         {
 
 
-            if (Input.GetKey(KeyCode.X) || Input.GetKey("joystick button 0"))
+            if (Input.GetKey(KeyCode.X) || Input.GetKeyDown("joystick button 0"))
             {
                 Debug.Log("isjamping");
                 rb.AddForce(transform.up * jampsSpeed);
