@@ -61,6 +61,7 @@
      <Compile Include="Assets\C#Script\OpenDoor.cs" />
      <Compile Include="Assets\C#Script\PlayerController.cs" />
      <Compile Include="Assets\C#Script\Pressuresensitivity.cs" />
+     <Compile Include="Assets\C#Script\WoodenBox.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/senko/Desktop/GameAward/Tokyo Game Award/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
