@@ -46,6 +46,15 @@ public class PlayerController : MonoBehaviour
                 isJumping = false;
             }
         }
+
+        if (RayCast.Hit == true&& Input.GetKeyDown("joystick button 2")) 
+        {
+            transform.parent = GameObject.Find("WoodenBox").transform;
+        }
+        else
+        {
+            transform.parent = null;
+        }
     }
 
 
