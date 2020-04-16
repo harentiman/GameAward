@@ -8,6 +8,7 @@ TagManager:
   - Key
   - ' WoodenBox'
   - Pressuresensitivity
+  - HeavyStone
   layers:
   - Default
   - TransparentFX
