@@ -12,13 +12,13 @@ public class Player_Move : MonoBehaviour
     {
         // WASD入力から、X平面(水平な地面)を移動する方向(velocity)を得ます
         velocity = Vector3.zero;
-      
+
         // 左右移動
         if (Input.GetKey(KeyCode.A))
             velocity.x -= 1;
         if (Input.GetKey(KeyCode.D))
             velocity.x += 1;
-        
+
         // 速度ベクトルの長さを1秒でmoveSpeedだけ進むように調整します
         velocity = velocity.normalized * moveSpeed * Time.deltaTime;
 
@@ -31,4 +31,25 @@ public class Player_Move : MonoBehaviour
         }
     }
 
+
+    //public float speed = 10f;
+    //float moveX = 0f;
+
+    //Rigidbody rb;
+
+    //void Start()
+    //{
+    //    rb = GetComponent<Rigidbody>();
+    //}
+
+    //void Update()
+    //{
+    //    moveX = Input.GetAxis("Horizontal") * speed;
+    //    Vector3 direction = new Vector3(moveX, 0, 0);
+    //}
+
+    //void FixedUpdate()
+    //{
+    //    rb.velocity = new Vector3(moveX, 0,0);
+    //}
 }
