@@ -12,6 +12,10 @@ public class Retry : MonoBehaviour
         {
             SceneManager.LoadScene("SampleScene");
         }
+        if (col.gameObject.name == "Enemy")
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
     }
 
 }
