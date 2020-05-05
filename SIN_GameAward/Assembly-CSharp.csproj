@@ -57,13 +57,13 @@
   <ItemGroup>
      <Compile Include="Assets\C#\Camera_Move.cs" />
      <Compile Include="Assets\C#\ChangeGravity.cs" />
-     <Compile Include="Assets\C#\CustomInput.cs" />
      <Compile Include="Assets\C#\Enemy_Move.cs" />
      <Compile Include="Assets\C#\GravityGauge.cs" />
      <Compile Include="Assets\C#\Player_Move.cs" />
      <Compile Include="Assets\C#\Retry.cs" />
      <Compile Include="Assets\naichilab\FadeManager\Sample\FadeSample.cs" />
      <Compile Include="Assets\naichilab\FadeManager\Scripts\FadeManager.cs" />
+     <Compile Include="Assets\unity_duplicate_special-master\unity_duplicate_special-master\CustomInput.cs" />
      <Compile Include="Assets\unity_duplicate_special-master\unity_duplicate_special-master\DuplicateSpecial.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/平間　達樹/Desktop/日本ゲーム大賞/SIN_GameAward/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

@@ -10,16 +10,14 @@ public class GravityGauge : MonoBehaviour
     public Image UIobj;
     public static bool roop;
     float countTime = 3.0f; 
+
     // Start is called before the first frame update
     void Start()
     {
-        
         UIobj.fillAmount = 0.0f;
     }
 
   // Update is called once per frame
-   
-
     void Update()
     {
        

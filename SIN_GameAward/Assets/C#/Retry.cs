@@ -8,13 +8,9 @@ public class Retry : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.name == "Retry_Zone")
+        if ((col.gameObject.tag=="Retrys") || (col.gameObject.tag == "Enemys"))
         {
-            SceneManager.LoadScene("SampleScene");
-        }
-        if (col.gameObject.name == "Enemy")
-        {
-            SceneManager.LoadScene("SampleScene");
+            FadeManager.Instance.LoadScene("SampleScene", 2);
         }
     }
 
