@@ -10,7 +10,7 @@ public class Player_Move : MonoBehaviour
 
     void Update()
     {
-        // WASD入力から、X平面(水平な地面)を移動する方向(velocity)を得ます
+        // AD入力から、X平面(水平な地面)を移動する方向(velocity)を得ます
         velocity = Vector3.zero;
 
         // 左右移動
@@ -31,6 +31,14 @@ public class Player_Move : MonoBehaviour
         }
     }
 
+    // リトライ時に消滅（操作不能）
+    void OnCollisionEnter(Collision col)
+    {
+        if ((col.gameObject.tag == "Retrys") || (col.gameObject.tag == "Enemys"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     //public float speed = 10f;
     //float moveX = 0f;
@@ -52,4 +60,5 @@ public class Player_Move : MonoBehaviour
     //{
     //    rb.velocity = new Vector3(moveX, 0,0);
     //}
+
 }

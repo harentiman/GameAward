@@ -17,7 +17,6 @@ public class Camera_Move : MonoBehaviour
     void Update()
     {
         Vector3 CameraPos = Player.transform.position;
-
         //カメラとプレイヤーの位置を同じにする
         transform.position = new Vector3(CameraPos.x, 6, -17);
     }
